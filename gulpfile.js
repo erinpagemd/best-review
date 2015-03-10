@@ -8,7 +8,7 @@ var watch = require('gulp-watch');
 gulp.task('watch', function () {
   gulp.src('./app/')
     .pipe(watch('./app/'))
-    .pipe(gulp.dest('./build/'));
+    .pipe(gulp.dest('build'));
 });
 
 //////////SASS////////////////////////////////////
@@ -39,4 +39,4 @@ gulp.task('jade', function() {
 
 //////////DEFAULT////////////////////////////////////
 
-gulp.task('default', ['copy', 'jade', 'sass', 'watch']);
+gulp.task('build', ['copy', 'jade', 'sass']);

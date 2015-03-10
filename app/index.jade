@@ -6,5 +6,16 @@ html
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     link(rel='stylesheet' href='css/style.css' type='text/css')
     title Best Reviews
-  body
-    h1 Hello World!
+  body(ng-app='products')
+    .container(ng-controller='ProductsCtrl')
+      h1 Hello World!
+      
+      form.form-inline
+        input.form-control(type='text' ng-model='searchTerm' placeholder='some awesome product')
+        button.btn.btn-primary(ng-click='getURL()') Find Reviews
+        p {{searchTerm}}
+    
+    script(type='text/javascript' src='vendor/jquery/dist/jquery.js')
+    script(type='text/javascript' src='vendor/lodash/lodash.js')
+    script(type='text/javascript' src='vendor/angular/angular.js')
+    script(type='text/javascript' src='scripts/main.js')
